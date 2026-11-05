@@ -68,47 +68,12 @@
       <h2>Book Your Appointment</h2>
       <p class="sub">अपनी जानकारी भरें। बुकिंग अनुरोध WhatsApp पर भेजा जाएगा।</p>
 
-      <form id="bookingForm">
-        <div class="grid">
-          <div class="field">
-            <label for="name">Pensioner's full name / पेंशनर का नाम *</label>
-            <input id="name" name="name" autocomplete="name" required maxlength="80" placeholder="Enter full name">
-          </div>
-          <div class="field">
-            <label for="mobile">Mobile number / मोबाइल नंबर *</label>
-            <input id="mobile" name="mobile" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" required placeholder="10-digit mobile number">
-          </div>
-          <div class="field">
-            <label for="pension">Pension type / पेंशन का प्रकार</label>
-            <select id="pension" name="pension">
-              <option value="Central Government">Central Government</option>
-              <option value="State Government">State Government</option>
-              <option value="Other / अन्य">Other / अन्य</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="date">Preferred appointment date *</label>
-            <input id="date" name="date" type="date" required>
-          </div>
-          <div class="field full">
-            <label>Visit preference / सेवा का विकल्प *</label>
-            <div class="radio-row">
-              <label><input type="radio" name="visit" value="Home visit" checked> Home visit / घर पर</label>
-              <label><input type="radio" name="visit" value="Office visit"> Office visit / कार्यालय पर</label>
-            </div>
-          </div>
-          <div class="field full">
-            <label for="address">Address / पता (home visit के लिए आवश्यक)</label>
-            <textarea id="address" name="address" rows="3" maxlength="250" placeholder="House number, area, city, PIN code"></textarea>
-          </div>
-          <div class="field full">
-            <label for="notes">Additional details (optional) / अन्य जानकारी</label>
-            <textarea id="notes" name="notes" rows="2" maxlength="300" placeholder="Preferred time or any assistance required"></textarea>
-          </div>
-        </div>
-        <button type="submit">Send Appointment Request on WhatsApp</button>
-        <p class="small">Please do not enter Aadhaar number, PPO number, bank details, OTP, or other sensitive information in this form. We will contact you to confirm the appointment.</p>
-      </form>
+      <div class="notice" style="margin-bottom:16px">
+        <strong>WhatsApp Appointment Form:</strong> नीचे दिए गए WhatsForm widget से अपनी appointment request भेजें।
+      </div>
+      <div id="whatsform-booking">
+        <p class="sub">अपॉइंटमेंट अनुरोध शुरू करने के लिए WhatsForm बटन पर क्लिक करें।</p>
+      </div>/form>
 
       <div class="contact">
         WhatsApp assistance: <a href="https://wa.me/918851626759" target="_blank" rel="noopener">+91 88516 26759</a>
@@ -118,43 +83,8 @@
   <footer>© <span id="year"></span> Digital Life Certificate Appointment Assistance. Independent service; not affiliated with any government department.</footer>
 
   <script>
-    const WHATSAPP_NUMBER = "918851626759";
-    const dateInput = document.getElementById("date");
-    const today = new Date();
-    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    dateInput.min = localToday;
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.getElementById("bookingForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      if (!this.reportValidity()) return;
-
-      const data = new FormData(this);
-      const visit = data.get("visit");
-      const address = (data.get("address") || "").trim();
-      if (visit === "Home visit" && !address) {
-        alert("Please enter the address for a home visit.");
-        document.getElementById("address").focus();
-        return;
-      }
-
-      const message = [
-        "DIGITAL LIFE CERTIFICATE APPOINTMENT REQUEST",
-        "",
-        "Pensioner's name: " + data.get("name"),
-        "Contact mobile: " + data.get("mobile"),
-        "Pension type: " + data.get("pension"),
-        "Preferred date: " + data.get("date"),
-        "Visit preference: " + visit,
-        "Address: " + (address || "Not provided"),
-        "Additional details: " + ((data.get("notes") || "").trim() || "None"),
-        "",
-        "Please confirm availability and appointment time."
-      ].join("\n");
-
-      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-      window.open(url, "_blank", "noopener,noreferrer");
-    });
   </script>
+  <script async src="https://whatsform.com/launcher.js" id="wf-widget" data-id="oey6GN" data-message="Message on WhatsApp"></script>t>
 </body>
 </html>

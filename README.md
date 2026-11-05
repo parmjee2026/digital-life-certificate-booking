@@ -11,6 +11,7 @@ A simple, responsive, bilingual-ready static website for requesting Digital Life
 - Pension type and preferred date
 - Home visit or office visit option
 - Address validation for home visits
+- Shows a required documents/details checklist (Aadhaar/VID, active mobile, PPO, pension bank details, pension authority details, biometric readiness)
 - Opens WhatsApp with a pre-filled appointment request
 - No database or backend required
 - GitHub Pages compatible

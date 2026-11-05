@@ -17,15 +17,6 @@
     .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 12px 35px #163c5b12}
     .notice{background:#eef6fc;border-left:4px solid var(--blue);padding:12px 14px;border-radius:8px;color:#29475d;font-size:14px;margin-bottom:20px}
     h2{font-size:22px;margin:0 0 5px}.sub{color:var(--muted);font-size:14px;margin:0 0 22px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    label{display:block;font-size:14px;font-weight:700;margin:0 0 6px}
-    input,select,textarea{width:100%;padding:12px 13px;border:1px solid #cbd7e0;border-radius:9px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
-    input:focus,select:focus,textarea:focus{outline:2px solid #a9d3f2;border-color:var(--blue)}
-    .field{margin-bottom:15px}.full{grid-column:1/-1}
-    .radio-row{display:flex;gap:18px;flex-wrap:wrap;padding:8px 0}
-    .radio-row label{font-weight:400;display:flex;align-items:center;gap:7px;margin:0}.radio-row input{width:auto}
-    button,.whatsapp-link{display:block;width:100%;border:0;border-radius:10px;background:var(--green);color:#fff;padding:14px 18px;font-weight:700;font-size:16px;cursor:pointer;text-align:center;text-decoration:none}
-    button:hover,.whatsapp-link:hover{filter:brightness(.94)}
     .small{font-size:12px;color:var(--muted);margin:12px 0 0}
     .docs{background:#f8fbfd;border:1px solid var(--line);border-radius:12px;padding:17px 18px;margin:0 0 22px}
     .docs h2{font-size:19px;margin:0 0 4px}
@@ -33,10 +24,11 @@
     .docs ul{padding-left:21px;margin:8px 0;color:#304858}
     .docs li{margin:7px 0;font-size:14px}
     .docs-note{font-size:12px;color:#7a4b13;background:#fff7e8;padding:10px;border-radius:8px;margin:12px 0 0}
+    .booking-frame{width:100%;height:650px;border:1px solid var(--line);border-radius:12px;background:#fff;display:block}
     .contact{text-align:center;margin-top:18px;color:var(--muted);font-size:14px}
     .contact a{color:var(--blue);font-weight:700;text-decoration:none}
     footer{text-align:center;color:#71808b;font-size:12px;padding:0 18px 28px}
-    @media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:19px}.full{grid-column:auto}}
+    @media(max-width:560px){.card{padding:19px}.booking-frame{height:720px}}
   </style>
 </head>
 <body>
@@ -52,7 +44,7 @@
         <strong>Important:</strong> This is an independent appointment-assistance service and is not a Government of India website. Appointment requests are sent to us on WhatsApp for confirmation.
       </div>
       <section class="docs" aria-labelledby="docs-title">
-        <h2 id="docs-title">Required Documents & Details</h2>
+        <h2 id="docs-title">Required Documents &amp; Details</h2>
         <p class="sub">अपॉइंटमेंट के समय ये दस्तावेज़ और जानकारी अपने पास रखें।</p>
         <ul>
           <li><strong>Aadhaar Card / Aadhaar number or VID</strong> — Aadhaar details must be available for authentication.</li>
@@ -69,11 +61,19 @@
       <p class="sub">अपनी जानकारी भरें। बुकिंग अनुरोध WhatsApp पर भेजा जाएगा।</p>
 
       <div class="notice" style="margin-bottom:16px">
-        <strong>WhatsApp Appointment Form:</strong> नीचे दिए गए WhatsForm widget से अपनी appointment request भेजें।
+        <strong>WhatsApp Appointment Form:</strong> नीचे दिए गए फॉर्म में अपनी appointment request भरें।
       </div>
       <div id="whatsform-booking">
-        <p class="sub">अपॉइंटमेंट अनुरोध शुरू करने के लिए WhatsForm बटन पर क्लिक करें।</p>
+        <iframe
+          class="booking-frame"
+          src="https://whatsform.com/DF9tRe"
+          title="Digital Life Certificate Appointment Booking Form"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="clipboard-read; clipboard-write">
+        </iframe>
       </div>
+      <p class="small">यदि फॉर्म दिखाई न दे, तो इसे सीधे खोलें: <a href="https://whatsform.com/DF9tRe" target="_blank" rel="noopener noreferrer">Open appointment form</a>.</p>
 
       <div class="contact">
         WhatsApp assistance: <a href="https://wa.me/918851626759" target="_blank" rel="noopener">+91 88516 26759</a>
@@ -85,6 +85,7 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-  <script async src="https://whatsform.com/launcher.js" id="wf-widget" data-id="oey6GN" data-message="Message on WhatsApp"></script>
+  <!-- WhatsForm floating WhatsApp launcher -->
+  <script async src="https://whatsform.com/launcher.js" id="wf-widget" data-id="DF9tRe" data-message="Message on WhatsApp"></script>
 </body>
 </html>

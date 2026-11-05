@@ -6,13 +6,10 @@ A simple, responsive, bilingual-ready static website for requesting Digital Life
 `+91 88516 26759`
 
 ## Features
-- Mobile-friendly appointment form
-- Pensioner's name and contact number
-- Pension type and preferred date
-- Home visit or office visit option
-- Address validation for home visits
+- WhatsForm WhatsApp appointment widget embedded on the website
+- Appointment enquiries are started through the WhatsForm widget
 - Shows a required documents/details checklist (Aadhaar/VID, active mobile, PPO, pension bank details, pension authority details, biometric readiness)
-- Opens WhatsApp with a pre-filled appointment request
+- Uses WhatsForm launcher widget (`data-id="oey6GN"`)
 - No database or backend required
 - GitHub Pages compatible
 
@@ -25,6 +22,6 @@ A simple, responsive, bilingual-ready static website for requesting Digital Life
 6. Wait for GitHub Pages to publish the site. The URL will be shown in Settings → Pages.
 
 ## Important
-This is an independent appointment-assistance website, not an official Government of India or Jeevan Pramaan portal. The form only prepares a WhatsApp message; it does not confirm an appointment automatically. Confirm the booking manually on WhatsApp.
+This is an independent appointment-assistance website, not an official Government of India or Jeevan Pramaan portal. The WhatsForm widget helps visitors start an appointment enquiry on WhatsApp; it does not itself confirm an appointment. Confirm each booking manually on WhatsApp.
 
 Do not request or collect Aadhaar numbers, PPO numbers, bank details, OTPs, or other sensitive credentials through this public form.
